@@ -3,4 +3,6 @@
 # It must have a lot of permissions -- account owner is the easiest
 #####################################################################
 
-TF_VAR_ibmcloud_api_key = ""
+ibmcloud_api_key = ""
+vpc_name = "iks-journey-vpc"
+resource_group = "asset-development"

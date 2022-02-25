@@ -4,9 +4,14 @@ variable "ibmcloud_api_key"{
     sensitive = true
 }
 
+variable "resource_group" {
+  type        = string
+  description = "Name of the resource group to provision resources into"
+}
+
 variable "vpc_name" {
     type = string
-    description = "Name of the VPC."
+    description = "Name of the VPC"
 }
 
 variable "prefix" {
@@ -26,12 +31,6 @@ variable "ibmcloud_timeout" {
   description = "IBM Cloud timeout value"
   default     = 600
 }
-
-variable "resource_group" {
-  type        = string
-  description = "Name of the resource group to provision resources into"
-}
-
 
 variable "worker_pool_flavor" {
   type        = string
