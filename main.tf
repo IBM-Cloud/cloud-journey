@@ -44,7 +44,7 @@ resource "ibm_container_vpc_alb_create" "alb" {
   cluster           = "${var.prefix}-cluster"
   type              = var.disable_public_service_endpoint ? "private" : "public"
   zone              = "${var.ibmcloud_region}-1"
-  resource_group_id = var.resource_group
+  resource_group_id = data.ibm_resource_group.resource_group.id
   enable            = "true"
   depends_on = [
     module.vpc_kubernetes_cluster

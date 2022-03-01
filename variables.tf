@@ -12,11 +12,6 @@ variable "resource_group" {
   description = "Name of the resource group to provision resources into"
 }
 
-variable "vpc_name" {
-  type        = string
-  description = "Name of the VPC"
-}
-
 variable "ibmcloud_region" {
   type        = string
   description = "Region in which the resources are provisioned. Run `ibmcloud regions` command"
