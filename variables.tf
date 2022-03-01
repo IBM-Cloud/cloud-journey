@@ -1,7 +1,10 @@
-variable "ibmcloud_api_key"{
-    type = string
-    description = "IBM Cloud API key"
-    sensitive = true
+##################################
+# IBM Cloud variables
+##################################
+variable "ibmcloud_api_key" {
+  type        = string
+  description = "IBM Cloud API key"
+  sensitive   = true
 }
 
 variable "resource_group" {
@@ -10,20 +13,19 @@ variable "resource_group" {
 }
 
 variable "vpc_name" {
-    type = string
-    description = "Name of the VPC"
-}
-
-variable "prefix" {
   type        = string
-  description = "A unique prefix to the assets."
-  default     = "iks-journey"
+  description = "Name of the VPC"
 }
 
 variable "ibmcloud_region" {
   type        = string
   description = "Region in which the resources are provisioned. Run `ibmcloud regions` command"
-  default     = "us-south"
+}
+
+variable "prefix" {
+  type        = string
+  description = "A unique prefix to the assets."
+  default     = "ibmcloud-journey"
 }
 
 variable "ibmcloud_timeout" {
@@ -31,6 +33,17 @@ variable "ibmcloud_timeout" {
   description = "IBM Cloud timeout value"
   default     = 600
 }
+
+variable "tags" {
+  type        = list(string)
+  description = "List of tags to be mapped to the resources"
+  default     = ["cloud-journey", "vpc"]
+}
+
+
+################################################
+# IBM Cloud Kubernetes service(IKS) variables
+#################################################
 
 variable "worker_pool_flavor" {
   type        = string
@@ -50,20 +63,15 @@ variable "kubernetes_version" {
   default     = "1.21.9"
 }
 
-variable "disable_public_service_endpoint"{
-    type = bool
-    description = "Set to true to disable the public service endpoints"
-    default = false
+variable "disable_public_service_endpoint" {
+  type        = bool
+  description = "Set to true to disable the public service endpoints"
+  default     = false
 }
 
-variable "tags" {
-    type = list(string)
-    description = "List of tags to be mapped to the resources"
-    default = ["cloud-native", "kubernetes"]
+variable "create_IKS_cluster" {
+  type        = bool
+  description = "Creates a IKS cluster in VPC"
+  default     = false
 }
 
-/*variable "cidr_blocks" {
-    type = list(string)
-    description = "CIDR block range for the subnet"
-    default = ["192.168.0.0/16", "192.168.1.0/16","192.168.2.0/16"]
-}*/
