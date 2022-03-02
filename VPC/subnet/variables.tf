@@ -14,7 +14,7 @@ variable vpc_id {
   type        = string
 }
 
-variable region {
+variable ibmcloud_region {
   description = "Region where VPC will be created"
   type        = string
   default     = "us-south"

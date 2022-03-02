@@ -1,6 +1,6 @@
 ##############################################################################
 # Subnet Resource
-# Copyright 2020 IBM
+# Copyright 2022 IBM
 ##############################################################################
 
 locals {
@@ -15,7 +15,7 @@ locals {
         name           = value.name                                             # Subnet shortname
         prefix_name    = "${var.prefix}-${value.name}"                          # Creates a name of the prefix and subnet name
         zone           = index(keys(var.subnets), zone) + 1                     # Zone 1, 2, or 3
-        zone_name      = "${var.region}-${index(keys(var.subnets), zone) + 1}"  # Contains region and zone
+        zone_name      = "${var.ibmcloud_region}-${index(keys(var.subnets), zone) + 1}"  # Contains ibmcloud_region and zone
         cidr           = value.cidr                                             # CIDR Block
         count          = index(var.subnets[zone], value) + 1                    # Count of the subnet within the zone
         public_gateway = value.public_gateway                                   # Public Gateway ID

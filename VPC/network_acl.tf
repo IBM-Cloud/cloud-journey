@@ -17,7 +17,7 @@ locals {
       }
 
       # Create a list of inbound and outbound rules by tier
-      tier_subnet_rules = {
+      /*tier_subnet_rules = {
             for tier in var.subnet_tiers:
             tier.name => flatten([
                   # For each subnet in a list of all subnets in that tier
@@ -45,21 +45,13 @@ locals {
                         }
                   ]
             ])
-      }
+      }*/
 
       # ACL Objects                                                                                    
       acl_object = {
             for network_acl in var.network_acls:
             network_acl.name => {
-                  rules = flatten([
-                        [
-                              # For each tier connected to the subnet, look up the connections needed
-                              # for each ACL.
-                              for connection in local.connection_map[network_acl.name]:
-                              local.tier_subnet_rules[connection]
-                        ],
-                        network_acl.rules
-                  ])
+                  rules = network_acl.rules
             }
       }
 

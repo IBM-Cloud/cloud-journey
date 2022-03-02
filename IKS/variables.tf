@@ -7,14 +7,20 @@ variable "ibmcloud_api_key" {
   sensitive   = true
 }
 
+variable "vpc_name" {
+  type        = string
+  description = "Name of the VPC to provision the IKS cluster"
+}
+
 variable "resource_group" {
   type        = string
-  description = "Name of the resource group to provision resources into"
+  description = "Name of the resource group to provision resources"
 }
 
 variable "ibmcloud_region" {
   type        = string
   description = "Region in which the resources are provisioned. Run `ibmcloud regions` command"
+  default     = "us-south"
 }
 
 variable "prefix" {
@@ -34,7 +40,6 @@ variable "tags" {
   description = "List of tags to be mapped to the resources"
   default     = ["cloud-journey", "vpc"]
 }
-
 
 ################################################
 # IBM Cloud Kubernetes service(IKS) variables
@@ -61,12 +66,6 @@ variable "kubernetes_version" {
 variable "disable_public_service_endpoint" {
   type        = bool
   description = "Set to true to disable the public service endpoints"
-  default     = false
-}
-
-variable "create_IKS_cluster" {
-  type        = bool
-  description = "Creates a IKS cluster in VPC"
   default     = false
 }
 
