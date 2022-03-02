@@ -26,7 +26,7 @@ variable "ibmcloud_region" {
 variable "prefix" {
   type        = string
   description = "A unique prefix to the assets."
-  default     = "ibmcloud-journey"
+  default     = "cloud-journey"
 }
 
 variable "ibmcloud_timeout" {
