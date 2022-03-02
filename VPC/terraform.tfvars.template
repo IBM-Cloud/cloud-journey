@@ -1,7 +1,9 @@
-#################################################################### 
+#####################################################
+# vpc provisioning
+#####################################################
+
 # The API key of the user deploying the solution
 # It must have a lot of permissions -- account owner is the easiest
-#####################################################################
 
 ibmcloud_api_key = ""
 resource_group = "asset-development"

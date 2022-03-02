@@ -36,3 +36,6 @@ override.tf.json
 terraform.rc
 
 *.hcl
+
+.terraform
+.DS_Store
