@@ -1,4 +1,4 @@
-# vpc-multizone-iks-lb
+# Cloud Journey
 
 Provision a multizone IBM Cloud Kubernetes service (IKS) cluster on a Virtual private cloud (VPC) with a load balancer.
 
