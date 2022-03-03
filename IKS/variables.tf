@@ -13,8 +13,13 @@ variable "vpc_name" {
 }
 
 variable "resource_group" {
+  description = "Name of resource group to provision resources into"
   type        = string
-  description = "Name of the resource group to provision resources"
+
+  validation {
+    error_message = "Unique ID must begin and end with a letter and contain only letters, numbers, and - characters."
+    condition     = can(regex("^([a-zA-Z]|[a-zA-Z][-a-zA-Z0-9]*[a-zA-Z0-9])$", var.resource_group))
+  }
 }
 
 variable "ibmcloud_region" {
@@ -24,9 +29,14 @@ variable "ibmcloud_region" {
 }
 
 variable "prefix" {
+  description = "A unique identifier need to provision resources. Must begin with a letter"
   type        = string
-  description = "A unique prefix to the assets."
   default     = "cloud-journey"
+
+  validation {
+    error_message = "Unique ID must begin and end with a letter and contain only letters, numbers, and - characters."
+    condition     = can(regex("^([a-zA-Z]|[a-zA-Z][-a-zA-Z0-9]*[a-zA-Z0-9])$", var.prefix))
+  }
 }
 
 variable "ibmcloud_timeout" {

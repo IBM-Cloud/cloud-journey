@@ -16,7 +16,7 @@ variable "resource_group" {
 
   validation {
     error_message = "Unique ID must begin and end with a letter and contain only letters, numbers, and - characters."
-    condition     = can(regex("^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$", var.resource_group))
+    condition     = can(regex("^([a-zA-Z]|[a-zA-Z][-a-zA-Z0-9]*[a-zA-Z0-9])$", var.resource_group))
   }
 }
 
@@ -27,7 +27,7 @@ variable "prefix" {
 
   validation {
     error_message = "Unique ID must begin and end with a letter and contain only letters, numbers, and - characters."
-    condition     = can(regex("^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$", var.prefix))
+    condition     = can(regex("^([a-zA-Z]|[a-zA-Z][-a-zA-Z0-9]*[a-zA-Z0-9])$", var.prefix))
   }
 }
 
@@ -42,6 +42,7 @@ variable "ibmcloud_timeout" {
   description = "IBM Cloud timeout value"
   default     = 600
 }
+
 
 # Comment out if not running in schematics
 variable "TF_VERSION" {
