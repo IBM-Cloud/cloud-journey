@@ -7,8 +7,8 @@ Provision a multizone IBM Cloud Kubernetes service (IKS) cluster on a Virtual pr
 
 | Name | Version |
 |------|---------|
-| [VPC](/VPC/README.md) | Provision a multizone Virtual Private Cloud (VPC) with a bastion subnet |
-| [IKS](/IKS/README.md) | Provision a multizone IKS cluster in a VPC |
+| [VPC](https://github.com/IBM-Cloud/cloud-journey/tree/main/VPC) | Provision a multizone Virtual Private Cloud (VPC) with a bastion subnet |
+| [IKS](https://github.com/IBM-Cloud/cloud-journey/tree/main/IKS) | Provision a multizone IKS cluster in a VPC |
 
 ## Journeys 
 
