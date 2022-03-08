@@ -70,7 +70,7 @@ variable "worker_count" {
 variable "kubernetes_version" {
   type        = string
   description = "Kubernetes version for the cluster, Run `ibmcloud ks versions`"
-  default     = "1.21.9"
+  default     = "1.22.7"
 }
 
 variable "disable_public_service_endpoint" {
