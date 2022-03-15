@@ -48,11 +48,11 @@ variable "ibmcloud_timeout" {
 variable "tags" {
   type        = list(string)
   description = "List of tags to be mapped to the resources"
-  default     = ["cloud-native-journey", "vpc"]
+  default     = ["cloud-journey", "vpc"]
 }
 
 ################################################
-# IBM Cloud Kubernetes service(IKS) variables
+# Red Hat OpenShift on IBM Cloud variables
 #################################################
 
 variable "worker_pool_flavor" {
@@ -70,7 +70,7 @@ variable "worker_count" {
 variable "kubernetes_version" {
   type        = string
   description = "Kubernetes version for the cluster, Run `ibmcloud ks versions`"
-  default     = "1.22.7"
+  default     = "4.8_openshift"
 }
 
 variable "disable_public_service_endpoint" {
@@ -79,3 +79,65 @@ variable "disable_public_service_endpoint" {
   default     = false
 }
 
+variable "update_all_workers" {
+  description = "set to true, the Kubernetes version of the worker nodes is updated along with the Kubernetes version of the cluster that you specify in kube_version."
+  type        = bool
+  default     = true
+}
+
+variable "entitlement" {
+  type        = string
+  description = "Entitlement reduces additional OCP Licence cost in OpenShift clusters. Use Cloud Pak with OCP Licence entitlement to create the OpenShift cluster."
+  default     = "cloud_pak"
+}
+
+variable "service_subnet" {
+  description = "Specify a custom subnet CIDR to provide private IP addresses for services."
+  type        = string
+  default     = null
+}
+
+variable "pod_subnet" {
+  description = "Specify a custom subnet CIDR to provide private IP addresses for pods."
+  type        = string
+  default     = null
+}
+
+variable "worker_labels" {
+  description = "Labels on all the workers in the default worker pool."
+  type        = map
+  default     = null
+}
+
+variable "wait_till" {
+  description = "specify the stage when Terraform to mark the cluster creation as completed."
+  type        = string
+  default     = "ingressReady"
+}
+
+variable "force_delete_storage" {
+  description = "force the removal of persistent storage associated with the cluster during cluster deletion."
+  type        = bool
+  default     = true
+}
+
+variable "kms_config" {
+  type        = list(map(string))
+  description = "key protect configurations"
+  default     = []
+}
+
+variable "taints" {
+  type = list(object({
+    key    = string
+    value  = string
+    effect = string
+  }))
+  description = "Set taints to worker nodes."
+  default = [{
+    key    = "dedicated"
+    value  = "edge"
+    effect = "NoSchedule"
+    },
+  ]
+}

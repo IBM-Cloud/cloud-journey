@@ -1,6 +1,6 @@
 # Cloud Journey
 
-Provision a multizone IBM Cloud Kubernetes service (IKS) cluster on a Virtual private cloud (VPC) with a load balancer.
+Provision a multizone IBM Cloud Kubernetes service (IKS) or Red Hat OpenShift on IBM Cloud cluster on a Virtual private cloud (VPC) with a load balancer.
 
 
 ## Resources
@@ -9,6 +9,7 @@ Provision a multizone IBM Cloud Kubernetes service (IKS) cluster on a Virtual pr
 |------|---------|
 | [VPC](https://github.com/IBM-Cloud/cloud-journey/tree/main/VPC) | Provision a multizone Virtual Private Cloud (VPC) with a bastion subnet |
 | [IKS](https://github.com/IBM-Cloud/cloud-journey/tree/main/IKS) | Provision a multizone IKS cluster in a VPC |
+| [ROKS](https://github.com/IBM-Cloud/cloud-journey/tree/main/ROKS) | Provision a multizone Red Hat OpenShift on IBM Cloud cluster in a VPC |
 
 ## Journeys 
 
