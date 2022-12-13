@@ -25,7 +25,7 @@ module "vpc_kubernetes_cluster" {
 
 locals {
   worker_zones = {
-    for subnet in data.ibm_is_vpc.vpc.subnets: subnet.zone => { "subnet_id" = subnet.id }
+    for subnet in data.ibm_is_vpc.vpc.subnets : subnet.zone => { "subnet_id" = subnet.id }
     if !can(regex("bastion", subnet.name))
   }
 }

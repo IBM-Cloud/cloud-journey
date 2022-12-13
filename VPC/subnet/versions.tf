@@ -8,7 +8,7 @@ terraform {
       source = "IBM-Cloud/ibm"
     }
   }
-  experiments = [ module_variable_optional_attrs ]
+  experiments = [module_variable_optional_attrs]
 }
 
 ##############################################################################

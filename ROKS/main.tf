@@ -19,7 +19,7 @@ resource "ibm_resource_instance" "cos_instance" {
 ###########################################################
 
 module "vpc_openshift_cluster" {
-  source  = "terraform-ibm-modules/cluster/ibm//modules/vpc-openshift"
+  source = "terraform-ibm-modules/cluster/ibm//modules/vpc-openshift"
 
   cluster_name                    = "${var.prefix}-roks-cluster"
   vpc_id                          = data.ibm_is_vpc.vpc.id
@@ -43,7 +43,7 @@ module "vpc_openshift_cluster" {
 
 locals {
   worker_zones = {
-    for subnet in data.ibm_is_vpc.vpc.subnets: subnet.zone => { "subnet_id" = subnet.id }
+    for subnet in data.ibm_is_vpc.vpc.subnets : subnet.zone => { "subnet_id" = subnet.id }
     if !can(regex("bastion", subnet.name))
   }
 }
