@@ -20,4 +20,7 @@ Provision a multizone IBM Cloud Kubernetes service (IKS) or Red Hat OpenShift on
 - [VMWare Classic Journey](https://cloud.ibm.com/docs/vmware-classic-journey)
    
    ![VMWare Classic Journey](https://cloud.ibm.com/docs-content/v1/content/746c97479ab5b16dbd4d54471f8b714647b6e8c4/vmware-classic-journey/images/solution-vmware-onboarding-hidden/intro/journeymap-1.png)
-- Cloud native Journey - :construction: Coming soon
+   
+- [Cloud native Journey](https://cloud.ibm.com/docs/cloud-native-journey) 
+
+   ![Cloud native journey](https://cloud.ibm.com/docs-content/v1/content/2802a498bf4dfc5196b8f052a2bff8537c8e9b23/cloud-native-journey/kubernetes-on-vpc/images/overview/journey-map.png)
